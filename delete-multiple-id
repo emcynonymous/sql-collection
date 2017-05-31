@@ -1,0 +1,11 @@
+delete cci_attendance
+where (attendee_id,rowid) not in (
+select attendee_id, max(rowid)
+from cci_attendance
+group by attendee_id);
+
+DELETE [table]
+WHERE (col_id, rowid) not in (
+SELECT col_id,max(rowid)
+from [table]
+group by col_id
