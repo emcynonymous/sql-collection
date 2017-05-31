@@ -1,0 +1,5 @@
+  SELECT dt
+  FROM (select trunc(sysdate,'YYYY')+rownum-1 dt
+  from dual
+  connect by level<=366)
+  WHERE to_char(dt,'fmday')='sunday';
