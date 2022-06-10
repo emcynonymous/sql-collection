@@ -51,7 +51,7 @@ from dba_hist_snapshot s
 where s.dbid = e.dbid
 and s.instance_number = e.instance_number
 and s.snap_id = e.snap_id
-and s.end_interval_time > to_date(:start_date,'MMDDYYYY')
+and s.end_interval_time > to_date(:start_date,'MMDDYYYY ')
 and s.end_interval_time < to_date(:end_date,'MMDDYYYY')
 and e.wait_class != 'Idle'
 union all
